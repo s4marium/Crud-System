@@ -1,0 +1,56 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <base href="/">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Example</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="posts-form">
+            <h1>SOCIAL MEDIA</h1>
+            <form onsubmit="event.preventDefault(); onSocPost();" autocomplete="off">
+                <div>
+                    <label>UserName*</label><label class="validation-error hide" id="usrNameValidationError">This
+                        field is required.</label> 
+                    <input type="text" name="usrName" id="usrName">
+                </div>
+                <div>
+                    <label>Post</label>
+                    <input type="text" name="posts" id="posts">
+                </div>
+                <div class="form-action-buttons">
+                    <input type="submit" value="Create New Post">
+                </div>
+            </form>
+        </div>
+        <br />
+        <div class="newposts-table">
+            <table class="list" id="socmediaPosts">
+                <thead>
+                    <tr>
+                        <th>UserName</th>
+                        <th>New Posts</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="modules/form/formpost.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            fetchPosts();
+        });
+    </script>
+</body>
+
+</html>
